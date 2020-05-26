@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 
 
 // // User
-// const usersSchema = new Schema({  message: String});
-// const User = mongoose.model("User", usersSchema);
+const usersSchema = new Schema({  message: String});
+const User = mongoose.model("User", usersSchema);
 
 // // comments
-// const commentsSchema = new Schema({  
-//   message: String,
-//   // user:usersSchema
-//   });
+const commentsSchema = new Schema({  
+  message: String,
+  // user:usersSchema
+  });
 const Comment = mongoose.model("Comment", commentsSchema);
 ""
 mongoose
@@ -19,15 +19,15 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(()=>{})
+  .then(main)
   .catch((err)=>{
     console.log("erorrrr")
     console.log(err)
   })
   .finally(() => mongoose.connection.close())
 
-// async function main() {
-//   const user= await new User({ name: "Ajil"}).save();
-//   await new Comment({message: "Hi", user:user}).save();
+async function main() {
+  const user= await new User({ name: "Ajil"}).save();
+  await new Comment({message: "Hi", user:user}).save();
 
-// }
+}
