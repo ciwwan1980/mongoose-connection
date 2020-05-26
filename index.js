@@ -27,11 +27,13 @@ mongoose
 
 async function main() {
 
-  const user= await new User({ name: "Ajil"}).save();
+  // const user= await new User({ name: "Ajil"}).save();
 
-  //relation between Comment && User by ObjectId
-  await new Comment({message: "Hi", user:user}).save();
+  // //relation between Comment && User by ObjectId
+  // await new Comment({message: "Hi", user:user}).save();
 
+
+//Embedded-way
 const update= await User.update({_id:"5ecda623a056eb42e80fa926"}, {name:"newAjil"}).exec(); 
 console.log(update)
 
