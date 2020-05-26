@@ -10,7 +10,7 @@ const User = mongoose.model("User", usersSchema);
 // // comments
 const commentsSchema = new Schema({  
   message: String,
-  // user:usersSchema
+  user:usersSchema
   });
 const Comment = mongoose.model("Comment", commentsSchema);
 ""
