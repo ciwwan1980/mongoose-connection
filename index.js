@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
-
 // // User
-const usersSchema = new Schema({  message: String});
+const usersSchema = new Schema({ name: String});
 const User = mongoose.model("User", usersSchema);
 
 // // comments
@@ -27,6 +25,7 @@ mongoose
   .finally(() => mongoose.connection.close())
 
 async function main() {
+
   const user= await new User({ name: "Ajil"}).save();
   await new Comment({message: "Hi", user:user}).save();
 
