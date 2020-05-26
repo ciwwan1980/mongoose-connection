@@ -32,4 +32,7 @@ async function main() {
   //relation between Comment && User by ObjectId
   await new Comment({message: "Hi", user:user}).save();
 
+const update= await User.update({_id:"5ecda623a056eb42e80fa926"}, {name:"newAjil"}).exec(); 
+console.log(update)
+
 }
